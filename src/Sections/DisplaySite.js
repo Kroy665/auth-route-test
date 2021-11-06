@@ -27,9 +27,7 @@ function DisplaySite({sendLogsToApp}) {
             {/* <h1>This is a test project for Authorization test</h1> */}
             <Switch>
                 
-                <Route path='/home'>
-                    <Home sendLogsToDisplayedSite={sendLogsToDisplayedSite}/>
-                </Route>
+                
                 <Route path='/register'>
                     <Register sendLogsToDisplayedSite={sendLogsToDisplayedSite}/>
                 </Route>
@@ -42,8 +40,11 @@ function DisplaySite({sendLogsToApp}) {
                 <Route path='/logout'>
                     <Logout sendLogsToDisplayedSite={sendLogsToDisplayedSite}/>
                 </Route>
-                
+                <Route path='/'>
+                    <Home sendLogsToDisplayedSite={sendLogsToDisplayedSite}/>
+                </Route>
             </Switch>
+            
         </div>
     )
 }

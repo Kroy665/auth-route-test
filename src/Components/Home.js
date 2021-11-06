@@ -13,9 +13,10 @@ function Home({sendLogsToDisplayedSite}) {
         email: '',
         password: ''
     })
+    const AccessToken = localStorage.getItem('kroyAccessToken')
+    const RefreshToken = localStorage.getItem('kroyRefreshToken')
     useEffect(() => {
-        const AccessToken = localStorage.getItem('kroyAccessToken')
-        const RefreshToken = localStorage.getItem('kroyRefreshToken')
+        
         // console.log(AccessToken)
         if(AccessToken===null){
             sendLogsToDisplayedSite('There is no token... ')
@@ -32,6 +33,7 @@ function Home({sendLogsToDisplayedSite}) {
                     }
                     const data = await axios.post('http://localhost:5000/auth/user-data', tokenData, {
                         headers: headers
+                        
                     })
                     .then(res=>{
                         // console.log("site: ",res)
@@ -39,7 +41,8 @@ function Home({sendLogsToDisplayedSite}) {
                     }).catch(err=>{
                         throw err
                     })
-                    // console.log("site data: ",data)
+                    // console.log('')
+                    console.log("site data: ",data)
                     // return data
                     if(data.Authorization){
                         setAuth(true)
@@ -64,7 +67,7 @@ function Home({sendLogsToDisplayedSite}) {
         }
         
         
-    })
+    },[AccessToken,RefreshToken])
     
 // console.log("Site Auth:", auth)
  

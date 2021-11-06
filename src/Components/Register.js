@@ -58,7 +58,7 @@ function Register({sendLogsToDisplayedSite}) {
                     
                     sendLogsToDisplayedSite(logData)
                     // console.log(logData);
-                    history.push('/home')
+                    history.push('/')
                 })
                 .catch( err =>{
                     // console.log("Axios: ",e)

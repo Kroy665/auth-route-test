@@ -35,7 +35,7 @@ function LogIn({sendLogsToDisplayedSite}) {
                     }
                     // console.log(logData);
                     sendLogsToDisplayedSite(logData)
-                    history.push('/home')
+                    history.push('/')
             })
             .catch((err)=>{
                 // console.log(err.response.data.error)
