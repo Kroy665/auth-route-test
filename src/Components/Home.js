@@ -31,7 +31,7 @@ function Home({sendLogsToDisplayedSite}) {
                     const tokenData ={
                         "refreshToken": RefreshToken
                     }
-                    const data = await axios.post('http://localhost:5000/auth/user-data', tokenData, {
+                    const data = await axios.post(`${process.env.REACT_APP_POST_APIS}/auth/user-data`, tokenData, {
                         headers: headers
                         
                     })
